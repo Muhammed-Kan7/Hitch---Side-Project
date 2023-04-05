@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'main.dart';
+
 void main() => runApp(const MyApp());
-
- TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController googleSignInController = TextEditingController();
-  TextEditingController usernameAndPasswordController = TextEditingController();
-  TextEditingController phoneNumberController = TextEditingController();
-
+ 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
  
@@ -25,7 +21,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
- 
+
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
  
@@ -47,18 +43,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'Welcome back',
+                  'Create account',
                   style: TextStyle(
                       color: Colors.green,
                       fontWeight: FontWeight.w500,
                       fontSize: 30),
-                )),
-            Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                child: const Text(
-                  'Sign in',
-                  style: TextStyle(fontSize: 20),
                 )),
             Container(
               padding: const EdgeInsets.all(10),
@@ -77,60 +66,34 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 controller: passwordController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
+                  labelText: 'Username',
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextField(
+                obscureText: true,
+                controller: passwordController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'Password',
                 ),
               ),
             ),
-            Container(
+
+          Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextField(
                 obscureText: true,
                 controller: passwordController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Sign in with Google',
+                  labelText: 'Confirm Password',
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: TextField(
-                obscureText: true,
-                controller: passwordController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Username and Password',
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: TextField(
-                obscureText: true,
-                controller: passwordController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Phone number',
-                ),
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                //forgot password screen
-              },
-              child: const Text('Forgot Password',),
-            ),
-            Container(
-                height: 50,
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: ElevatedButton(
-                  child: const Text('Login'),
-                  onPressed: () {
-                    print(nameController.text);
-                    print(passwordController.text);
-                  },
-                )
-            ),
+  
             Row(
               children: <Widget>[
                 const Text('Create a account?'),
