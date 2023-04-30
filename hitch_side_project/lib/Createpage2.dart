@@ -6,9 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:hitch_side_project/Createpage.dart';
 // ignore: file_names
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
