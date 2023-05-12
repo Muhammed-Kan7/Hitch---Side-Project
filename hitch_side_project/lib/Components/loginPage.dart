@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:hitch_side_project/Components/HomePage.dart';
 import 'package:hitch_side_project/Components/SignUp.dart';
+import 'package:twitter_login/entity/auth_result.dart';
 import '../Firebase/Firebase_options.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:github_sign_in/github_sign_in.dart';
+import 'package:twitter_login/twitter_login.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -20,18 +21,28 @@ class _LoginState extends State<Login> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  Future<UserCredential> signInWithGithub() async {
-    final GitHubSignIn gitHubSignIn = GitHubSignIn(
-        clientId: 'f9cf6e9e09f253e7ff44',
-        clientSecret: '53dc68d84fb3a68f1ec17be30dfe5846dc3e64ba',
-        redirectUrl:
+  Future logininWithTwitter() async {
+    final twitterLogin = new TwitterLogin(
+        apiKey: 'hYFv1b7a6tRBSp7hgwt92vEeM',
+        apiSecretKey: '5ohn9WWHVDKvqPMwXtCYKc9AfwOJltBqiPovVHLklUX2rppgYA',
+        redirectURI:
             'https://hitch---sideproject.firebaseapp.com/__/auth/handler');
 
-    final result = await gitHubSignIn.signIn(context);
-    final githubAuthCredential = GithubAuthProvider.credential(result.token);
-
-    return await FirebaseAuth.instance
-        .signInWithCredential(githubAuthCredential);
+     final authResult = await twitterLogin.login();
+    switch (authResult.status) {
+      case TwitterLoginStatus.loggedIn:
+        print('Logged in');
+        print(authResult.authToken);
+        print(authResult.authTokenSecret);
+        break;
+      case TwitterLoginStatus.cancelledByUser:
+        print('Login canel');
+        break;
+      case TwitterLoginStatus.error:
+      case null:
+        print('Login error');
+        break;
+    }
   }
 
   Future<void> _handleSignIn() async {
@@ -46,7 +57,6 @@ class _LoginState extends State<Login> {
       // Show error message
     }
   }
-
 
   Future signinwithGoogle() async {
     try {
@@ -239,19 +249,19 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  InkWell(
+                   InkWell(
                     onTap: () {},
                     child: GestureDetector(
-                      onTap: signInWithGithub,
+                      onTap: logininWithTwitter,
                       child: Padding(
                         padding: EdgeInsets.all(6),
                         child: Wrap(
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
                             Icon(Icons
-                                .accessibility), // <-- Use 'Image.asset(...)' here
+                                .lock), // <-- Use 'Image.asset(...)' here
                             SizedBox(width: 12),
-                            Text('Sign in with Github'),
+                            Text('Sign in with Twitter'),
                           ],
                         ),
                       ),
