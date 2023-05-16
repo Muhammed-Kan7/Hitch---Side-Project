@@ -315,6 +315,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_auth_2:
+    dependency: transitive
+    description:
+      name: flutter_web_auth_2
+      sha256: ee636fa43af689df8ace6421ea5f5e14b8b3eda0e8caa3e5a1e3bb71f0833636
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.4"
+  flutter_web_auth_2_platform_interface:
+    dependency: transitive
+    description:
+      name: flutter_web_auth_2_platform_interface
+      sha256: f6fa7059ff3428c19cd756c02fef8eb0147131c7e64591f9060c90b5ab84f094
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.4"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -336,6 +352,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "9.2.0"
+  freezed_annotation:
+    dependency: transitive
+    description:
+      name: freezed_annotation
+      sha256: aeac15850ef1b38ee368d4c53ba9a847e900bb2c53a4db3f6881cbb3cb684338
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -464,6 +488,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.5"
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      sha256: b10a7b2ff83d83c777edba3c6a0f97045ddadd56c944e1a23a3fdf43a1bf4467
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.8.1"
   lints:
     dependency: transitive
     description:
@@ -496,6 +528,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
+  mime:
+    dependency: transitive
+    description:
+      name: mime
+      sha256: e4ff8e8564c03f255408decd16e7899da1733852a9110a58fe6d1b817684a63e
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.4"
   nested:
     dependency: transitive
     description:
@@ -504,6 +544,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  oauth1:
+    dependency: transitive
+    description:
+      name: oauth1
+      sha256: bc23d3d5d36ba1cb39ba0f9ad18d29ab08a7c4e06f1d0fa7b2fb9b0225622873
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   path:
     dependency: transitive
     description:
@@ -653,6 +701,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.16"
+  twitter_api_v2:
+    dependency: "direct main"
+    description:
+      name: twitter_api_v2
+      sha256: "6a3c17a5772dc98097aa393bfdbb45c5985d159f6383116f49447c83adc3252e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.9.4"
   twitter_login:
     dependency: "direct main"
     description:
@@ -661,6 +717,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.3.2"
+  twitter_oauth2_pkce:
+    dependency: "direct main"
+    description:
+      name: twitter_oauth2_pkce
+      sha256: b5bbae7b833d1573680904452f5ea0ea7006ac85a42df731ef9d730ce724ad14
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
   typed_data:
     dependency: transitive
     description:
@@ -669,6 +733,78 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
+  universal_io:
+    dependency: transitive
+    description:
+      name: universal_io
+      sha256: "06866290206d196064fd61df4c7aea1ffe9a4e7c4ccaa8fcded42dd41948005d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.0"
+  url_launcher:
+    dependency: transitive
+    description:
+      name: url_launcher
+      sha256: eb1e00ab44303d50dd487aab67ebc575456c146c6af44422f9c13889984c00f3
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.11"
+  url_launcher_android:
+    dependency: transitive
+    description:
+      name: url_launcher_android
+      sha256: "7aac14be5f4731b923cc697ae2d42043945076cd0dbb8806baecc92c1dc88891"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.33"
+  url_launcher_ios:
+    dependency: transitive
+    description:
+      name: url_launcher_ios
+      sha256: "9af7ea73259886b92199f9e42c116072f05ff9bea2dcb339ab935dfc957392c2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.4"
+  url_launcher_linux:
+    dependency: transitive
+    description:
+      name: url_launcher_linux
+      sha256: "207f4ddda99b95b4d4868320a352d374b0b7e05eefad95a4a26f57da413443f5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.5"
+  url_launcher_macos:
+    dependency: transitive
+    description:
+      name: url_launcher_macos
+      sha256: "91ee3e75ea9dadf38036200c5d3743518f4a5eb77a8d13fda1ee5764373f185e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.5"
+  url_launcher_platform_interface:
+    dependency: transitive
+    description:
+      name: url_launcher_platform_interface
+      sha256: "6c9ca697a5ae218ce56cece69d46128169a58aa8653c1b01d26fcd4aad8c4370"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.2"
+  url_launcher_web:
+    dependency: transitive
+    description:
+      name: url_launcher_web
+      sha256: "81fe91b6c4f84f222d186a9d23c73157dc4c8e1c71489c4d08be1ad3b228f1aa"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.16"
+  url_launcher_windows:
+    dependency: transitive
+    description:
+      name: url_launcher_windows
+      sha256: "254708f17f7c20a9c8c471f67d86d76d4a3f9c1591aad1e15292008aceb82771"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.6"
   vector_math:
     dependency: transitive
     description:
@@ -685,6 +821,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.4"
+  window_to_front:
+    dependency: transitive
+    description:
+      name: window_to_front
+      sha256: "7aef379752b7190c10479e12b5fd7c0b9d92adc96817d9e96c59937929512aee"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   xdg_directories:
     dependency: transitive
     description:

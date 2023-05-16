@@ -10,6 +10,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:twitter_login/twitter_login.dart';
 
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -26,7 +27,7 @@ class _LoginState extends State<Login> {
         apiKey: 'hYFv1b7a6tRBSp7hgwt92vEeM',
         apiSecretKey: '5ohn9WWHVDKvqPMwXtCYKc9AfwOJltBqiPovVHLklUX2rppgYA',
         redirectURI:
-            'https://hitch---sideproject.firebaseapp.com/__/auth/handler');
+            'https://www.youtube.com/');
 
      final authResult = await twitterLogin.login();
     switch (authResult.status) {
@@ -36,7 +37,7 @@ class _LoginState extends State<Login> {
         print(authResult.authTokenSecret);
         break;
       case TwitterLoginStatus.cancelledByUser:
-        print('Login canel');
+        print('Login cancel');
         break;
       case TwitterLoginStatus.error:
       case null:
