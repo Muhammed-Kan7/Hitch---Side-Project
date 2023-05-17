@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:hitch_side_project/Components/HomePage.dart';
 import 'package:hitch_side_project/Components/SignUp.dart';
+import 'package:hitch_side_project/Firebase/firebase.functions.dart';
 import 'package:twitter_login/entity/auth_result.dart';
 import '../Firebase/Firebase_options.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:twitter_login/twitter_login.dart';
-
 
 class Login extends StatefulWidget {
   @override
@@ -27,9 +27,9 @@ class _LoginState extends State<Login> {
         apiKey: 'hYFv1b7a6tRBSp7hgwt92vEeM',
         apiSecretKey: '5ohn9WWHVDKvqPMwXtCYKc9AfwOJltBqiPovVHLklUX2rppgYA',
         redirectURI:
-            'https://www.youtube.com/');
-
-     final authResult = await twitterLogin.login();
+            'https://hitch---sideproject.firebaseapp.com/__/auth/handler');
+    print("TEST TWITTER!!!!!!!!!");
+    final authResult = await twitterLogin.login();
     switch (authResult.status) {
       case TwitterLoginStatus.loggedIn:
         print('Logged in');
@@ -43,6 +43,8 @@ class _LoginState extends State<Login> {
       case null:
         print('Login error');
         break;
+      default:
+        print("other ERROR");
     }
   }
 
@@ -59,18 +61,33 @@ class _LoginState extends State<Login> {
     }
   }
 
-  Future signinwithGoogle() async {
+  // void test() {
+  //   print("HELLO WORLD!!!");
+  //   signInWithGoogle();
+  // }
+
+  Future signinwithGoogleBTN() async {
+    // await Firebase.initializeApp(
+    //   options: DefaultFirebaseOptions.currentPlatform,
+    // );
+
+    // await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+    print(FirebaseAuth.instance.currentUser);
     try {
       await signInWithGoogle();
+         Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomePage()));
+    print("hello");
     } on FirebaseAuthException catch (e) {
-      print("object");
+      print("SIGN IN WITH GOOGLE ERROR !!!!!!");
       return;
     }
 
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HomePage()));
-    print("hello");
+ 
   }
+
+
+
 
   Future<UserCredential?> signInWithGoogle() async {
     // Create an instance of the firebase auth and google signin
@@ -92,12 +109,13 @@ class _LoginState extends State<Login> {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-
+    print("tesdfghyujikt");
+    print(credential);
     //GoogleSignIn().signOut();
 
     //Sign in the user with the credentials
     //final UserCredential userCredential = await auth.signInWithCredential(credential);
-    return FirebaseAuth.instance.signInWithCredential(credential);
+    return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
   @override
@@ -232,25 +250,15 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  InkWell(
-                    onTap: () {},
-                    child: GestureDetector(
-                      onTap: signinwithGoogle,
-                      child: Padding(
-                        padding: EdgeInsets.all(6),
-                        child: Wrap(
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          children: [
-                            Icon(Icons
-                                .android), // <-- Use 'Image.asset(...)' here
-                            SizedBox(width: 12),
-                            Text('Sign in with Google'),
-                          ],
-                        ),
-                      ),
+                  ElevatedButton.icon(
+                    icon: ImageIcon(
+                      AssetImage("assets/google.png"),
+                      size: 24,
                     ),
+                    label: const Text("sign in"),
+                    onPressed: signinwithGoogleBTN,
                   ),
-                   InkWell(
+                  InkWell(
                     onTap: () {},
                     child: GestureDetector(
                       onTap: logininWithTwitter,
@@ -259,8 +267,7 @@ class _LoginState extends State<Login> {
                         child: Wrap(
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
-                            Icon(Icons
-                                .lock), // <-- Use 'Image.asset(...)' here
+                            Icon(Icons.lock), // <-- Use 'Image.asset(...)' here
                             SizedBox(width: 12),
                             Text('Sign in with Twitter'),
                           ],

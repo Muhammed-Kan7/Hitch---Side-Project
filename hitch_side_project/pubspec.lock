@@ -42,7 +42,7 @@ packages:
     source: hosted
     version: "1.1.1"
   cloud_firestore:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: cloud_firestore
       sha256: "1ba6da0f5c07323b62c3843da98d18f49020b0a337a2b3faf66e207609fa4742"
@@ -73,14 +73,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.0"
-  cross_file:
-    dependency: transitive
-    description:
-      name: cross_file
-      sha256: "0b0036e8cccbfbe0555fd83c1d31a6f30b77a96b598b35a5d36dd41f718695e9"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.3+4"
   crypto:
     dependency: transitive
     description:
@@ -130,7 +122,7 @@ packages:
     source: hosted
     version: "6.1.4"
   firebase_auth:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: firebase_auth
       sha256: "76da24b6c2aee88694d42c1a8896bc84d85adbd4a7801f376f1cce6dc8b09a15"
@@ -246,14 +238,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
-  flutter_plugin_android_lifecycle:
-    dependency: transitive
-    description:
-      name: flutter_plugin_android_lifecycle
-      sha256: "96af49aa6b57c10a312106ad6f71deed5a754029c24789bbf620ba784f0bd0b0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.14"
   flutter_secure_storage:
     dependency: transitive
     description:
@@ -303,7 +287,7 @@ packages:
     source: hosted
     version: "2.0.0"
   flutter_signin_button:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_signin_button
       sha256: a063ecc5d5308377e103c9c3a89084abf15fca4440636233af6a13abacd5dcae
@@ -337,7 +321,7 @@ packages:
     source: sdk
     version: "0.0.0"
   fluttertoast:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: fluttertoast
       sha256: "2f9c4d3f4836421f7067a28f8939814597b27614e021da9d63e5d3fb6e212d25"
@@ -377,7 +361,7 @@ packages:
     source: hosted
     version: "0.2.1"
   google_sign_in:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: google_sign_in
       sha256: "776a4c988dc179c3b8e9201de0ad61bf350a4e75d378ff9d94c76880378c7bca"
@@ -432,46 +416,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-  image_picker:
-    dependency: "direct dev"
-    description:
-      name: image_picker
-      sha256: "3da954c3b8906d82ecb50fd5e2b5401758f06d5678904eed6cbc06172283a263"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.8.7+4"
-  image_picker_android:
-    dependency: transitive
-    description:
-      name: image_picker_android
-      sha256: "271e0448e82268b3fa1cb2a48e4a911cbc2135587123d7df8e7ca703c5b10da2"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.8.6+11"
-  image_picker_for_web:
-    dependency: transitive
-    description:
-      name: image_picker_for_web
-      sha256: "98f50d6b9f294c8ba35e25cc0d13b04bfddd25dbc8d32fa9d566a6572f2c081c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.12"
-  image_picker_ios:
-    dependency: transitive
-    description:
-      name: image_picker_ios
-      sha256: a1546ff5861fc15812953d4733b520c3d371cec3d2859a001ff04c46c4d81883
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.8.7+3"
-  image_picker_platform_interface:
-    dependency: transitive
-    description:
-      name: image_picker_platform_interface
-      sha256: "1991219d9dbc42a99aff77e663af8ca51ced592cd6685c9485e3458302d3d4f8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.6.3"
   intl:
     dependency: transitive
     description:
